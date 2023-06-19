@@ -26,11 +26,10 @@ SECRET_KEY = "django-insecure-r)t4szq2j0+k(%_a+_94$8pj1fc^ls+j9p!f_ny=x4y)s)p2_r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -38,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
+    "product.apps.ProductConfig",
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 PRODUCT_STATIC = os.path.join(BASE_DIR, 'product/static/')
-STATICFILES_DIRS = [PRODUCT_STATIC]
+STATICFILES_DIRS = [PRODUCT_STATIC, ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
